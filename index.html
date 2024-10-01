@@ -3,8 +3,6 @@
     <head>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
         <script>
             AFRAME.registerComponent('videohandler', {
                 init: function () {
@@ -32,14 +30,11 @@
             embedded
         >
             <a-assets>
-                <!-- Add your video assets here -->
                 <video id="vid1" src="assets/video1.mp4" preload="auto" loop playsinline></video>
-                <video id="vid2" src="assets/video2.mp4" preload="auto" loop playsinline></video>
-                <video id="vid3" src="assets/video3.mp4" preload="auto" loop playsinline></video>
-                <!-- Add more videos as needed -->
+                <video id="vid2" src="assets/wheel.mp4" preload="auto" loop playsinline></video>
+                <video id="vid3" src="assets/climate.mp4" preload="auto" loop playsinline></video>
             </a-assets>
 
-            <!-- Marker for the first video -->
             <a-marker
                 type="pattern"
                 preset="custom"
@@ -50,22 +45,20 @@
                 <a-video src="#vid1" scale="1 1 1" position="0 0.1 0" rotation="-90 0 0"></a-video>
             </a-marker>
 
-            <!-- Marker for the second video -->
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/marker2.patt"
+                url="assets/wheel.patt"
                 video-id="vid2"
                 videohandler
             >
                 <a-video src="#vid2" scale="1 1 1" position="0 0.1 0" rotation="-90 0 0"></a-video>
             </a-marker>
 
-            <!-- Marker for the third video -->
             <a-marker
                 type="pattern"
                 preset="custom"
-                url="assets/marker3.patt"
+                url="assets/climatepatt"
                 video-id="vid3"
                 videohandler
             >
